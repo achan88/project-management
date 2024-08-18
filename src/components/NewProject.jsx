@@ -46,7 +46,7 @@ export default function NewProject({ onAdd, onCancel }) {
           <li>
             <button
               onClick={handleSave}
-              className="px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-05-"
+              className="px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-500"
             >
               Save
             </button>
