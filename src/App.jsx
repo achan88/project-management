@@ -1,16 +1,15 @@
+import { useState } from "react";
 import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectSidebar from "./components/ProjectsSidebar";
-import { useState } from "react";
-import SelectedProject from "./components/SelectedProject";
+import SelectedProject from "./components/SelectedProject"
 
 function App() {
   const [projectsState, setProjectsState] = useState({
     selectedProjectId: undefined, // undefined: doing nothing, null: adding new project
     projects: [],
-    tasks: [],
+    tasks: []
   });
-
   function handleAddTask(text) {
 
     setProjectsState((prevState) => {
@@ -23,13 +22,12 @@ function App() {
 
       return {
         ...prevState,
-        selectedProjectId: undefined,
         tasks: [newTask, ...prevState.tasks]
       };
     });
     
   }
-
+  console.log(projectsState.tasks)
   function handleDeleteTask() {}
 
   function handleSelectProject(id) {
@@ -58,6 +56,7 @@ function App() {
       };
 
       return {
+        ...prevState,
         selectedProjectId: undefined,
         projects: [...prevState.projects, newProject],
       };
